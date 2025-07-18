@@ -1,2 +1,2 @@
-# flappy-bird
-Flappy Bird
+# Flappy-Bird-Clone
+# Flappy-Bird-Clone
