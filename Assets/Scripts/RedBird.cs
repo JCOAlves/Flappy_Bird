@@ -21,7 +21,7 @@ public class RedBird : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("Teclou a tecla espaço.");
+            Debug.Log("Teclou a tecla espaço. Red Bird pulou.");
             jumping = true;
         }
     }
