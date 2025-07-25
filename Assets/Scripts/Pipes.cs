@@ -32,7 +32,7 @@ public class Pipes : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("DestroyPoint"))
+        if (other.CompareTag("DestroyPoints"))
         {
             Destroy(gameObject);
         }

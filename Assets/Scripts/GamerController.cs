@@ -17,9 +17,9 @@ public class GamerController : MonoBehaviour
     private void SpawnPipes()
     {
         Instantiate(
-            pipes, //Instancia com os pilares
+            pipes,                     //Instancia com os pilares
             source.transform.position, //Na posição do objeto source
-            Quaternion.identity //Com rotação padrão (sem rotação, identidade)
+            Quaternion.identity        //Com rotação padrão (sem rotação, identidade)
         );
     }
 
@@ -28,7 +28,7 @@ public class GamerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Destroy(message); //Elimina a mnsgame inicial quando o jogo começa
+            Destroy(message); //Elimina a mensagame inicial quando o jogo começa
             duck.SetActive(true);
         }
     }
