@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 532420506617743605}
   serializedVersion: 2
   m_LocalRotation: {x: -0.0066155614, y: 0.0013273557, z: 0.9999731, w: 0.0028785064}
-  m_LocalPosition: {x: 6.83, y: 5.67, z: -0.08}
+  m_LocalPosition: {x: 0, y: 5.67, z: -0.08}
   m_LocalScale: {x: 1.3748158, y: 1.822065, z: 0.97348}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -157,7 +157,7 @@ Transform:
   m_GameObject: {fileID: 5504532180103007335}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.811, y: -3.88, z: -0.0349096}
+  m_LocalPosition: {x: 0, y: -3.88, z: -0.0349096}
   m_LocalScale: {x: 1.4037303, y: 2.354854, z: 0.97348}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -273,7 +273,7 @@ GameObject:
   - component: {fileID: 7734986448892860198}
   m_Layer: 0
   m_Name: Pipes
-  m_TagString: Untagged
+  m_TagString: pipes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -308,8 +308,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
-  OriginPosition: 1
-  limitPosition: -16
 --- !u!61 &7734986448892860198
 BoxCollider2D:
   m_ObjectHideFlags: 0

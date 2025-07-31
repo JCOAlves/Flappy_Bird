@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GamerController : MonoBehaviour
+public class GameController : MonoBehaviour
 {
     [SerializeField] private GameObject message, duck;
     [SerializeField] private GameObject pipes, source;
 
     private float interval = 1f;
+    private bool started;
     // Start is called before the first frame update
     void Start()
     {   //Condicionais de verificação de elementos nulos
@@ -35,11 +36,13 @@ public class GamerController : MonoBehaviour
             Debug.LogWarning("AVISO: O GameObject 'duck' não foi atribuído no Inspector do " + gameObject.name + ". O pato pode não ser ativado.");
         }
 
+        started = false;
         InvokeRepeating("SpawnPipes", 0f, interval);
     }
 
     private void SpawnPipes()
     {
+        if (!started) return;
         if (pipes != null && source != null)
         {
             Instantiate(
@@ -63,11 +66,12 @@ public class GamerController : MonoBehaviour
             if (message != null) //Verifica se 'message' não é nulo antes de tentar destruí-lo
             {
                 Destroy(message); //Elimina a mensagame inicial quando o jogo começa
-                message = null; //Opcional, mas boa prática: zera a referência para evitar tentar usar novamente
+                message = null;   //Opcional, mas boa prática: zera a referência para evitar tentar usar novamente
             }
             if (duck != null) //Verifica se 'duck' não é nulo antes de tentar destruí-lo
             {
                 duck.SetActive(true); // Ativa o pato (personagem do jogador)
+                started = true;
             }
         }
     }
