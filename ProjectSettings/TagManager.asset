@@ -7,6 +7,8 @@ TagManager:
   - DestroyPoints
   - source
   - pipes
+  - Score
+  - base
   layers:
   - Default
   - TransparentFX
