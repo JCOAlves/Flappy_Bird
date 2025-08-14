@@ -8,7 +8,9 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject message, duck;
     [SerializeField] private GameObject pipes, source;
     [SerializeField] private Text scoreText;
+    [SerializeField] private GameObject pontos;
     [SerializeField] private GameObject gameOver;
+    [SerializeField] private AudioClip soundPoints;
 
     private float interval = 1f;
     private bool started;
@@ -24,7 +26,7 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            //Destroi outras instacoas com Gamecontroller. Só pode haver um objeto GameController.
+            //Destroi outras instacias com Gamecontroller. Só pode haver um objeto GameController.
             Destroy(gameObject);
         }
     }
@@ -82,6 +84,7 @@ public class GameController : MonoBehaviour
     public void IncreaseScore(int score)
     {
         this.score += score;
+        AudioController.instance.PlayAudioClip(soundPoints, false);
         scoreText.text = this.score.ToString();
     }
 
@@ -89,7 +92,12 @@ public class GameController : MonoBehaviour
     {
         Debug.Log("GAME OVER");
         gameOver.SetActive(true);
-        Time.timeScale = 0f;
+        Time.timeScale = 0f; //Paraliza o jogo.
+    }
+
+    public int GetScore()
+    {
+        return score;
     }
     
     // Update is called once per frame
@@ -102,11 +110,14 @@ public class GameController : MonoBehaviour
                 Destroy(message); //Elimina a mensagame inicial quando o jogo começa
                 message = null;   //Opcional, mas boa prática: zera a referência para evitar tentar usar novamente
             }
-            if (duck != null)     //Verifica se 'duck' não é nulo antes de tentar destruí-lo
+
+            if (duck != null && pontos != null) //Verifica se 'duck' não é nulo antes de tentar destruí-lo
             {
                 duck.SetActive(true); // Ativa o pato (personagem do jogador)
+                pontos.SetActive(true);
                 started = true;
             }
+
         }
     }
 }
