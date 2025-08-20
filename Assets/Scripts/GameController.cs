@@ -90,6 +90,10 @@ public class GameController : MonoBehaviour
 
     public void GameOver()
     {
+        if (message != null)
+        {
+            Destroy(message);
+        }
         Debug.Log("GAME OVER");
         gameOver.SetActive(true);
         Time.timeScale = 0f; //Paraliza o jogo.
